@@ -1,0 +1,29 @@
+type Todo {
+  id: ID!
+  text: String!
+  done: Boolean!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  user: User @goField(forceResolver: true)
+}
+
+input InputTodo {
+  text: String! @validate(field: "text")
+  userId: Int!
+  createdAt: DateTime
+}
+
+input TodoFilter {
+  text: String
+  done: Boolean
+  userId: Int
+}
+
+extend type Query {
+  todo(id: Int!): Todo!
+  todos(filter: TodoFilter, limit: Int = 10, offset: Int = 0): [Todo!]! @auth(role: ADMIN)
+}
+
+extend type Mutation {
+  createTodo(input: InputTodo!): Todo!
+}

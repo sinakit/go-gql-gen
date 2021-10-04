@@ -1,0 +1,11 @@
+type User {
+  id: ID!
+  name: String!
+  email: String!
+  todos: [Todo!] @goField(forceResolver: true)
+}
+
+
+extend type Query {
+  users: [User!]!
+}
