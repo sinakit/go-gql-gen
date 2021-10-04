@@ -1,7 +1,6 @@
 <img src="https://raw.githubusercontent.com/egonelbre/gophers/ac77b513f41f44a7805694063aaef16ccd95a9b3/vector/party/birthday.svg" alt="logo" align="right" width="140" />
 
 # Graphql Go Boilerplate
-
 ## 📋 Introduction
 
 A simple Graphql Go HTTP server boilerplate. This boilerplate project can be fully customized to your needs.
